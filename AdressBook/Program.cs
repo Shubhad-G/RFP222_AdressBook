@@ -15,17 +15,17 @@ namespace AddressBook
 
             ManageContacts add = new ManageContacts();
             
-            Console.WriteLine("Options for AdressBook\n1.Add Contact\n2.Edit an Existing Contact");
+            Console.WriteLine("Options for AdressBook\n1.Add Contact\n2.Edit an Existing Contact\n3.delete an existing contact");
+            add.addContact();//adding contact to the address book
            
-       
-                    
-                        add.addContact();
-                       
-     
-                        Console.WriteLine("enter the name you want to edit");
+            Console.WriteLine("enter the first name you want to edit");//editing contact
                         string name = Console.ReadLine();
                         add.editContact(name);
-                        Console.ReadLine();
+
+            Console.WriteLine("enter the first name of the contact you want to delete");//deleting contact
+                name = Console.ReadLine();
+                add.deleteContact(name);
+            Console.ReadLine();
 
              
            /* foreach (var a in adressBook)

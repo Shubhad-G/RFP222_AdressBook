@@ -84,5 +84,14 @@ namespace AdressBook
             else
                 Console.WriteLine("Entered Name does not exist in the address book");
         }
+        public void deleteContact(string name)
+        {
+            if (name == contact.firstName)
+            {
+                adressBook.Remove(contact);
+            }
+            else
+                Console.WriteLine("Entered Name does not exist in the address book");
+        }
     }
 }
