@@ -16,5 +16,7 @@ namespace AdressBook
         public string state;
         public string zip;
         public string country;
+
+        
     }
 }
