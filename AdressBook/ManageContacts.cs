@@ -53,7 +53,7 @@ namespace AdressBook
             
             foreach(Contacts c in adressBook)
             {
-                Console.WriteLine(c.firstName);
+                Console.WriteLine("first name:"+c.firstName+" last name:"+c.lastName+" phone no:"+c.phone);
             }
         }
         public void editContact(string name)
