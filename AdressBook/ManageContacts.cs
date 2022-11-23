@@ -9,40 +9,52 @@ namespace AdressBook
     internal class ManageContacts
     {
        public List<Contacts> adressBook = new List<Contacts>();
-       public Contacts contact = new Contacts();
-        public void addContact()
+        public Contacts contact;
+        public void addContact(int n)
         {
-            Console.WriteLine("enter the First Name:");
-            contact.firstName = Console.ReadLine();
+            for (int i = 0; i <= n; i++)
+            {
+                contact = new Contacts();
+                Console.WriteLine("enter the First Name:");
+                contact.firstName = Console.ReadLine();
 
-            Console.WriteLine("enter the Last Name:");
-            contact.lastName = Console.ReadLine();
-
-
-            Console.WriteLine("enter the email:");
-            contact.email = Console.ReadLine();
-
-
-            Console.WriteLine("enter the phone no:");
-            contact.phone = Console.ReadLine();
+                Console.WriteLine("enter the Last Name:");
+                contact.lastName = Console.ReadLine();
 
 
-            Console.WriteLine("enter the city name:");
-            contact.city = Console.ReadLine();
+                Console.WriteLine("enter the email:");
+                contact.email = Console.ReadLine();
 
 
-            Console.WriteLine("enter the State:");
-            contact.state = Console.ReadLine();
+                Console.WriteLine("enter the phone no:");
+                contact.phone = Console.ReadLine();
 
 
-            Console.WriteLine("enter the zip code:");
-            contact.zip = Console.ReadLine();
+                Console.WriteLine("enter the city name:");
+                contact.city = Console.ReadLine();
 
 
-            Console.WriteLine("enter the country:");
-            contact.country = Console.ReadLine();
+                Console.WriteLine("enter the State:");
+                contact.state = Console.ReadLine();
 
-            adressBook.Add(contact);
+
+                Console.WriteLine("enter the zip code:");
+                contact.zip = Console.ReadLine();
+
+
+                Console.WriteLine("enter the country:");
+                contact.country = Console.ReadLine();
+
+                adressBook.Add(contact);
+            }
+        }
+        public void displayContact()
+        {
+            
+            foreach(Contacts c in adressBook)
+            {
+                Console.WriteLine(c.firstName);
+            }
         }
         public void editContact(string name)
         {

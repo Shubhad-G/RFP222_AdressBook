@@ -16,9 +16,14 @@ namespace AddressBook
             ManageContacts add = new ManageContacts();
             
             Console.WriteLine("Options for AdressBook\n1.Add Contact\n2.Edit an Existing Contact\n3.delete an existing contact");
-            add.addContact();//adding contact to the address book
-           
-            Console.WriteLine("enter the first name you want to edit");//editing contact
+            int n;//number of contacts
+            Console.WriteLine("enter how many contacts you want to add to the address book");
+            n=Convert.ToInt32(Console.ReadLine());
+            add.addContact(n);//adding contact to the address book
+            add.displayContact();//displaying the contacts
+
+
+            Console.WriteLine("enter the first name of the contact you want to edit");//editing contact
                         string name = Console.ReadLine();
                         add.editContact(name);
 
