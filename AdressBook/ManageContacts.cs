@@ -10,12 +10,13 @@ namespace AdressBook
     {
        public List<Contacts> adressBook = new List<Contacts>();
         public Contacts contact;
+        IDictionary<string, List<Contacts>> addressBookNames = new Dictionary<string, List<Contacts>>();
         public void addContact(int n)
         {
             for (int i = 0; i <= n; i++)
             {
                 contact = new Contacts();
-                Console.WriteLine("enter the First Name:");
+                Console.WriteLine("\nenter the First Name:");
                 contact.firstName = Console.ReadLine();
 
                 Console.WriteLine("enter the Last Name:");
@@ -46,14 +47,34 @@ namespace AdressBook
                 contact.country = Console.ReadLine();
 
                 adressBook.Add(contact);
+            }   
+        }
+        public void addAddressBooks()
+        {
+            Console.WriteLine("enter Book name");
+            string name = Console.ReadLine();
+            addressBookNames.Add(name,adressBook);
+           
+        }
+
+        public void displayAddressBooks()
+        {
+            foreach (var i in addressBookNames.Keys)
+            {
+                Console.WriteLine("\nAddress Book Name:{0}\nContacts\n", i);
+                foreach(Contacts c in addressBookNames[i])
+                {
+                    Console.WriteLine("\nFirst Name:"+c.firstName+"\nLast Name:"+c.lastName+"\nPhone No:"+c.phone+"\nEmail:"+c.email+"\nState:"+c.state+"\nCity:"+c.city+"\nZip:"+c.zip+"\nCountry:"+c.country+"\n");
+                }
             }
+            
         }
         public void displayContact()
         {
             
             foreach(Contacts c in adressBook)
             {
-                Console.WriteLine("first name:"+c.firstName+" last name:"+c.lastName+" phone no:"+c.phone);
+                Console.WriteLine("\nFirst Name:" + c.firstName + "\nLast Name:" + c.lastName + "\nPhone No:" + c.phone + "\nEmail:" + c.email + "\nState:" + c.state + "\nCity:" + c.city + "\nZip:" + c.zip + "\nCountry:" + c.country + "\n");
             }
         }
         public void editContact(string name)
